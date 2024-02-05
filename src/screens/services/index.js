@@ -26,7 +26,7 @@ export default function Services() {
 	}, [focused]);
 	return (
 		<SafeAreaView style={styles.container}>
-			<Text>Services</Text>
+			<Text style={styles.title}>Services</Text>
 			<FlatList
 				data={services}
 				renderItem={({ item, key }) => (
@@ -60,6 +60,7 @@ export default function Services() {
 
 const styles = StyleSheet.create({
 	container: { flex: 1, justifyContent: "center", marginTop: 40 },
+	title: { fontSize: 20, margin: 20, color: "#303030", fontWeight: 'bold'},
 	card: {
 		backgroundColor: "#ddd",
 		padding: 10,
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
 	},
 	category: {
 		color: "#868686",
-		fontStyle: 'italic'
+		fontStyle: "italic"
 	},
 	value: {
 		color: "#303030"

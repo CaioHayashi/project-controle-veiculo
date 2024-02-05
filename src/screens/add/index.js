@@ -1,8 +1,8 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-
 import { Carousel } from "./components/Carousel";
 import { useState } from "react";
 import { Form } from "./components/Form";
+import Animated, {FadeIn, FadeOut} from "react-native-reanimated";
 
 export default function Add() {
 	const categories = [
@@ -36,14 +36,14 @@ export default function Add() {
 				setCategorySelected={setCategorySelected}
 			/>
 
-			<View style={styles.content}>
+			<Animated.View style={styles.content} entering={FadeIn} exiting={FadeOut}>
 				<Text style={styles.titleContent}>
 					{categories[categorySelected].title}
 				</Text>
 				<Text style={styles.subtitleDetails}>
 					{categories[categorySelected].description}
 				</Text>
-			</View>
+			</Animated.View>
 
 			<Form category={categories[categorySelected].title} />
 		</ScrollView>
